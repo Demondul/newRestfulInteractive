@@ -1,0 +1,65 @@
+<div class="container">
+	<div class="container-fluid">
+		<div class="header">
+			<h1>Restful Tasks API</h1>
+		</div>
+		<div class="col-md-5 inline-div"></div>
+		<div class="col-md-2 inline-div">
+			<button class="btn btn-danger" (click)="getAllTask()">GET ALL TASKS</button>
+		</div>
+		<div class="col-md-5 inline-div"></div>
+		<div *ngFor="let task of allTasks" class="table-dark">
+			<div class="col-md-4 inline-div">
+				<label class="col-form-label"> {{task.title}} </label>
+			</div>
+			<div class="col-md-5 inline-div">
+				<label class="col-form-label"> {{task.description}} </label>
+			</div>
+			<div class="col-md-1 inline-div">
+				<button class="btn btn-primary" (click)="showDescription(task)">Show</button>
+			</div>
+			<div class="col-md-1 inline-div">
+				<button class="btn btn-primary" (click)="editFlag = !editFlag">edit</button>
+			</div>
+			<div class="col-md-1 inline-div">
+				<button class="btn btn-primary" (click)="deleteTask(task)">delete</button>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="table-bordered">
+			<form (submit)="addTask()">
+				<div class="col-md-2 inline-div">
+					<label class="form-label-group"> Task: </label>
+				</div>
+				<div class="col-md-3 inline-div">
+					<input type="text" class="form" [(ngModel)]="theTask.title">
+				</div>
+				<div class="col-md-2 inline-div">
+					<label class="col-form-label"> Description: </label>
+				</div>
+				<div class="col-md-4 inline-div">
+					<input type="text" class="form" [(ngModel)]="theTask.description">
+				</div>
+				<div class="col-md-1 inline-div">
+					<input type="submit" class="btn form-control btn-bd-primary" value="Add">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="text-center">
+	<div class="col-md-4 inline-div"></div>
+	<div class="form col-md-4 inline-div">
+		{{description}}
+	</div>
+	<div class="col-md-4 inline-div"></div>
+</div>
+
+<!--
+<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+    show = {{show}}
+    <br>
+    <div *ngIf="show">Text to show</div> -->

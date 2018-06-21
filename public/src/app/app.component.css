@@ -1,0 +1,14 @@
+/* div{
+  border: 1px dotted black;
+} */
+.header{
+  width: 100%;
+  text-align: center;
+}
+.inline-div{
+  display: inline-block;
+}
+.container{
+  width: 1500px;
+  min-height: 300px;
+}
